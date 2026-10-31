@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New Horizon Container Terminal Ltd (NHCT)</title>
+<meta name="description" content="New Horizon Container Terminal Ltd (NHCT): a terminal operating company at Chattogram Port, built on decades of maritime, engineering and industrial strength.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FAF7F0; --cream:#F4E9CE; --choc:#4A230B; --choc2:#361706; --choc3:#6B3A1A;
+  --gold:#B8860B; --goldB:#C99A3A; --goldL:#E3C878; --goldD:#8A6608;
+  --ink:#2A2420; --grey:#6B6054; --faint:#A89A86; --line:#E6DAC2;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--ivory);line-height:1.6;-webkit-font-smoothing:antialiased;font-size:16px;}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+section{padding:104px 0;position:relative;overflow:hidden;}
+[id]{scroll-margin-top:78px;}
+.eyebrow{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--goldD);}
+.eyebrow.on{color:var(--goldL);}
+.disp{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;line-height:1.0;letter-spacing:.005em;color:var(--choc);}
+.disp .it{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;text-transform:none;color:var(--gold);letter-spacing:0;}
+.disp.light{color:#fff;} .disp.light .it{color:var(--goldL);}
+h2.sh{font-size:clamp(32px,5vw,58px);margin:14px 0 22px;}
+.lead{font-size:clamp(17px,2vw,20px);color:#3A2A1A;line-height:1.5;}
+p{margin-bottom:14px;} .muted{color:var(--grey);}
+.btn{display:inline-block;font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:14px;padding:15px 30px;border-radius:4px;transition:.25s;}
+.btn.gold{background:linear-gradient(145deg,var(--goldB),var(--gold));color:#2A1600;} .btn.gold:hover{filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 12px 26px rgba(138,100,8,.3);}
+.btn.ghost{border:1.5px solid rgba(255,255,255,.5);color:#fff;} .btn.ghost:hover{background:rgba(255,255,255,.1);border-color:#fff;}
+/* wave motif */
+.wave{position:absolute;left:0;right:0;width:100%;height:120px;opacity:.9;pointer-events:none;z-index:1;}
+.wave svg{width:100%;height:100%;}
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .35s,box-shadow .35s;}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px;transition:height .35s;}
+header.solid{background:rgba(54,23,6,.97);backdrop-filter:blur(6px);box-shadow:0 6px 24px rgba(0,0,0,.18);} header.solid .nav{height:64px;}
+.brand img{height:54px;}
+.links{display:flex;gap:30px;align-items:center;}
+.links a{font-family:'Oswald',sans-serif;font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#EADFCB;transition:.2s;position:relative;}
+.links a:not(.cta)::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:2px;background:var(--goldL);transition:right .25s;}
+.links a:not(.cta):hover::after{right:0;}
+.links a:hover{color:#fff;} .links .cta{color:var(--goldL);border:1px solid rgba(227,200,120,.5);padding:8px 16px;border-radius:4px;}
+.links .cta:hover{background:var(--gold);color:#2A1600;border-color:var(--gold);}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;color:#fff;padding:150px 0 90px;background:var(--choc2);}
+.hero .bg{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.hero .bg img{width:100%;height:100%;object-fit:cover;opacity:.8;transform:scale(1.12);}
+.hero .veil{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(40,15,3,.92),rgba(40,15,3,.55) 55%,rgba(74,35,11,.35)),linear-gradient(0deg,rgba(40,15,3,.85),rgba(40,15,3,0) 55%);}
+.hero .inner{position:relative;z-index:3;width:100%;}
+.hero .logo{height:112px;margin-bottom:22px;}
+.hero h1{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(40px,6.5vw,80px);line-height:.98;margin:16px 0 22px;max-width:15ch;}
+.hero h1 .it{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;text-transform:none;color:var(--goldL);}
+.hero .sub{font-size:clamp(17px,2vw,21px);color:#E7D9C2;max-width:56ch;line-height:1.55;}
+.hero .btns{margin-top:34px;display:flex;gap:15px;flex-wrap:wrap;}
+.hero .wave{bottom:36px;opacity:.55;}
+.hero .scroll{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:4;width:26px;height:42px;border:2px solid rgba(227,200,120,.6);border-radius:14px;}
+.hero .scroll::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--goldL);animation:sdot 1.8s ease-in-out infinite;}
+@keyframes sdot{0%{opacity:0;transform:translateY(0)}30%{opacity:1}70%{opacity:1;transform:translateY(12px)}100%{opacity:0;transform:translateY(16px)}}
+/* stats circles */
+.circles{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin:38px 0;}
+.circ{aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 38% 32%,var(--goldL),var(--goldB) 55%,var(--gold));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px;box-shadow:0 16px 34px rgba(138,100,8,.22);transition:transform .4s;}
+.circ:hover{transform:translateY(-6px);}
+.circ .n{font-family:'Anton',sans-serif;font-size:clamp(26px,3.6vw,42px);color:var(--choc);line-height:1;}
+.circ .k{font-size:12px;color:#5A3310;margin-top:7px;line-height:1.3;font-weight:500;}
+/* grid2 */
+.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
+.imgcard{border-radius:14px;overflow:hidden;position:relative;box-shadow:0 20px 50px rgba(74,35,11,.14);}
+.imgcard img{width:100%;height:100%;min-height:400px;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);}
+.imgcard:hover img{transform:scale(1.05);}
+.imgcard .tag{position:absolute;left:0;bottom:0;background:var(--choc);color:var(--goldL);font-family:'Oswald';font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:9px 15px;}
+/* foundation numbered cards */
+.fcards{margin-top:34px;display:flex;flex-direction:column;gap:14px;}
+.fcard{display:grid;grid-template-columns:92px 1fr;align-items:center;border-radius:12px;padding:20px 26px;box-shadow:0 10px 26px rgba(74,35,11,.1);transition:transform .35s,box-shadow .35s;}
+.fcard:hover{transform:translateX(6px);box-shadow:0 16px 34px rgba(74,35,11,.16);}
+.fcard:nth-child(odd){background:linear-gradient(100deg,var(--choc),var(--choc3));color:#F0E4CF;}
+.fcard:nth-child(even){background:linear-gradient(100deg,var(--goldB),var(--goldL));color:#3A1C06;margin-left:7%;}
+.fcard .num{font-family:'Anton';font-size:46px;opacity:.5;}
+.fcard:nth-child(odd) .num{color:var(--goldL);} .fcard:nth-child(even) .num{color:#8A5A12;}
+.fcard .t{font-family:'Oswald';font-weight:700;font-size:19px;text-transform:uppercase;letter-spacing:.01em;}
+.fcard .r{font-family:'Oswald';font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.8;margin:4px 0 7px;}
+.fcard p{font-size:14px;margin:0;line-height:1.5;opacity:.95;}
+/* full-bleed divider */
+.divider{min-height:72vh;display:flex;align-items:flex-end;color:#fff;padding:0;}
+.divider .bg{position:absolute;inset:0;z-index:0;} .divider .bg img{width:100%;height:100%;object-fit:cover;}
+.divider .veil{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(40,15,3,.82),rgba(40,15,3,.15) 60%);}
+.divider .inner{position:relative;z-index:3;padding-bottom:70px;}
+.divider h3{font-family:'Anton';text-transform:uppercase;font-size:clamp(30px,5vw,56px);line-height:1.0;}
+.divider h3 .it{font-family:'Playfair Display';font-style:italic;font-weight:500;text-transform:none;color:var(--goldL);}
+/* principals */
+.prin{background:var(--cream);}
+.pgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;margin-top:40px;}
+.person{cursor:pointer;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s;}
+.person:hover{transform:translateY(-7px);box-shadow:0 20px 42px rgba(74,35,11,.16);}
+.person:focus{outline:none;} .person:focus-visible{box-shadow:0 0 0 3px var(--gold);}
+.pphoto{position:relative;background:#EFEAE0;overflow:hidden;}
+.pphoto img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1);}
+.person:hover .pphoto img{transform:scale(1.035);}
+.pinfo{padding:17px 18px 19px;position:relative;flex:1;display:flex;flex-direction:column;}
+.pinfo .ro{margin-bottom:0;}
+.pinfo::after{content:"";position:absolute;left:18px;right:18px;top:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--goldL));transform:scaleX(0);transform-origin:left;transition:transform .35s;}
+.person:hover .pinfo::after{transform:scaleX(1);}
+.person .nm{font-family:'Oswald';font-weight:600;font-size:16.5px;color:var(--choc);line-height:1.22;}
+.person .ro{font-size:12.5px;color:var(--grey);margin-top:5px;line-height:1.35;}
+.pmore{display:inline-flex;align-items:center;gap:5px;font-family:'Oswald';font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--goldD);margin-top:auto;padding-top:14px;opacity:.6;transition:opacity .25s,transform .25s;}
+.person:hover .pmore{opacity:1;transform:translateX(3px);}
+/* principal modal */
+.pmodal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px;}
+.pmodal.open{display:flex;}
+.pmodal .backdrop{position:absolute;inset:0;background:rgba(30,12,2,.74);backdrop-filter:blur(5px);animation:bfade .3s ease;}
+@keyframes bfade{from{opacity:0}to{opacity:1}}
+.pmodal .panel{position:relative;z-index:2;background:var(--ivory);border-radius:16px;max-width:760px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 30px 70px rgba(0,0,0,.45);animation:prise .38s cubic-bezier(.2,.7,.2,1);}
+@keyframes prise{from{opacity:0;transform:translateY(28px) scale(.98)}to{opacity:1;transform:none}}
+.pmodal .phead{display:grid;grid-template-columns:168px 1fr;gap:28px;align-items:center;padding:30px 36px 26px;padding-right:66px;background:linear-gradient(140deg,var(--cream),var(--ivory));border-radius:16px 16px 0 0;}
+.pmodal .ppic{border-radius:10px;overflow:hidden;background:#EFEAE0;box-shadow:0 12px 26px rgba(74,35,11,.16);}
+.pmodal .ppic img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;}
+.pmodal .pnm{font-family:'Anton';text-transform:uppercase;font-size:clamp(23px,3.4vw,30px);color:var(--choc);line-height:1.05;}
+.pmodal .pro{font-family:'Oswald';font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--goldD);margin:9px 0 3px;}
+.pmodal .psub{font-size:12.5px;color:var(--grey);font-style:italic;line-height:1.4;margin-bottom:12px;}
+.pmodal .ppos{list-style:none;} .pmodal .ppos li{font-size:12.5px;color:var(--grey);padding-left:16px;position:relative;margin-bottom:3px;}
+.pmodal .ppos li::before{content:"\25C6";position:absolute;left:0;color:var(--gold);font-size:9px;top:4px;}
+.pmodal .pbody{padding:10px 36px 36px;}
+.pmodal .pbody p{font-size:14.5px;color:var(--ink);line-height:1.62;margin-bottom:12px;}
+.pmodal .plab{font-family:'Oswald';font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--goldD);margin:24px 0 11px;}
+.pmodal .phl{list-style:none;} .pmodal .phl li{position:relative;padding-left:22px;font-size:14px;color:var(--choc);font-weight:500;margin-bottom:9px;line-height:1.45;}
+.pmodal .phl li::before{content:"\25C6";position:absolute;left:0;color:var(--gold);font-size:11px;top:4px;}
+.pmodal .pstatg{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.pmodal .pstatg .s{background:linear-gradient(150deg,var(--goldL),var(--goldB));border-radius:10px;padding:15px 11px;text-align:center;}
+.pmodal .pstatg .s .v{font-family:'Anton';font-size:21px;color:var(--choc);line-height:1;}
+.pmodal .pstatg .s .k{font-size:10.5px;color:#5A3310;margin-top:6px;line-height:1.25;font-weight:500;}
+.pmodal .pcred{margin-top:22px;font-size:12.5px;color:var(--grey);border-left:3px solid var(--gold);padding:5px 0 5px 14px;line-height:1.5;}
+.pmodal .pcred b{color:var(--choc);font-family:'Oswald';letter-spacing:.08em;font-size:11px;text-transform:uppercase;display:block;margin-bottom:3px;}
+.pmodal .pclose{position:absolute;top:16px;right:18px;z-index:3;width:38px;height:38px;border-radius:50%;background:var(--choc);color:var(--goldL);border:none;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.25s;}
+.pmodal .pclose:hover{background:var(--choc3);transform:rotate(90deg);}
+@media(max-width:620px){.pmodal .phead{grid-template-columns:1fr;text-align:center;justify-items:center;padding:30px 24px 20px;} .pmodal .ppos{text-align:left;} .pmodal .ppic{max-width:150px;margin:0 auto;} .pmodal .pbody{padding:10px 24px 28px;} .pmodal .pstatg{grid-template-columns:1fr 1fr;}}
+/* services */
+.services{background:var(--choc2);color:#fff;}
+.services .bg{position:absolute;top:0;left:0;right:0;height:52%;z-index:0;}
+.services .bg img{width:100%;height:100%;object-fit:cover;opacity:.9;}
+.services .bg .v{position:absolute;inset:0;background:linear-gradient(0deg,var(--choc2),rgba(40,15,3,.35) 40%,rgba(40,15,3,.6));}
+.services .inner{position:relative;z-index:3;}
+.svcgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:40px;}
+.sc{position:relative;border-radius:12px;padding:20px 18px 18px;background:linear-gradient(160deg,var(--goldL),var(--goldB) 70%,var(--gold));color:#3A1C06;box-shadow:0 14px 30px rgba(0,0,0,.3);min-height:150px;display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s;}
+.sc:hover{transform:translateY(-7px);box-shadow:0 22px 42px rgba(0,0,0,.4);}
+.sc .num{position:absolute;top:12px;right:16px;font-family:'Anton';font-size:22px;color:rgba(58,28,6,.4);}
+.sc .ic{width:40px;height:40px;margin-bottom:auto;}
+.sc .ic svg{width:34px;height:34px;}
+.sc .t{font-family:'Oswald';font-weight:700;font-size:14px;text-transform:uppercase;line-height:1.15;margin-top:14px;}
+/* services detail accordion */
+.sdetail{margin-top:30px;}
+details.svc{border-bottom:1px solid var(--line);}
+details.svc summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:18px;padding:18px 0;transition:padding-left .25s;}
+details.svc summary:hover{padding-left:8px;}
+details.svc summary::-webkit-details-marker{display:none;}
+details.svc .sn{font-family:'Anton';font-size:26px;color:var(--goldB);min-width:44px;}
+details.svc .st{font-family:'Oswald';font-weight:700;font-size:18px;text-transform:uppercase;color:var(--choc);flex:1;}
+details.svc .plus{font-family:'Anton';color:var(--gold);font-size:22px;transition:transform .25s;}
+details.svc[open] .plus{transform:rotate(45deg);}
+details.svc .body{padding:0 0 22px 62px;display:grid;grid-template-columns:1fr 1fr;gap:10px 34px;animation:fadein .4s ease;}
+@keyframes fadein{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+details.svc .lab{font-family:'Oswald';font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--goldD);margin-bottom:5px;}
+details.svc .tx{font-size:14px;color:var(--ink);line-height:1.5;}
+details.svc .full{grid-column:1/-1;}
+.dbul{list-style:none;margin:8px 0;} .dbul li{position:relative;padding-left:20px;font-size:14px;color:var(--choc);font-weight:600;margin-bottom:6px;}
+.dbul li::before{content:"\25C6";position:absolute;left:0;color:var(--gold);font-size:11px;top:3px;}
+.exp{font-size:12.5px;color:var(--grey);} .exp b{color:var(--choc);}
+/* scope / two cards */
+.twocard{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px;}
+.bigcard{border-radius:14px;padding:30px 30px;box-shadow:0 16px 36px rgba(74,35,11,.14);}
+.bigcard.choc{background:linear-gradient(150deg,var(--choc),var(--choc2));color:#F0E4CF;}
+.bigcard.gold{background:linear-gradient(150deg,var(--goldL),var(--goldB));color:#3A1C06;}
+.bigcard .ce{font-family:'Oswald';font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.8;}
+.bigcard .ct{font-family:'Oswald';font-weight:700;font-size:20px;text-transform:uppercase;margin:7px 0 14px;line-height:1.15;}
+.bigcard ul{list-style:none;} .bigcard li{position:relative;padding-left:22px;margin-bottom:11px;font-size:15px;font-weight:500;}
+.bigcard li::before{content:"\25C6";position:absolute;left:0;top:3px;font-size:11px;}
+.bigcard.choc li::before{color:var(--goldL);} .bigcard.gold li::before{color:var(--choc);}
+.note{margin-top:22px;border-left:4px solid var(--gold);background:#fff;padding:16px 20px;font-size:15px;color:var(--choc);border-radius:0 8px 8px 0;box-shadow:0 8px 20px rgba(74,35,11,.08);}
+/* tables */
+.tblwrap{margin-top:26px;overflow-x:auto;}
+table.t{width:100%;border-collapse:collapse;min-width:520px;}
+table.t thead td{background:linear-gradient(100deg,var(--choc),var(--choc3));color:var(--goldL);font-family:'Oswald';font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:13px 16px;}
+table.t tbody td{padding:12px 16px;font-size:14px;border-bottom:1px solid var(--line);}
+table.t tbody tr:nth-child(even){background:#fff;}
+table.t .k{font-weight:700;color:var(--choc);} table.t .c{text-align:center;color:var(--choc);font-weight:700;}
+/* edge cards */
+.qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px;}
+.qcard{position:relative;border-radius:12px;padding:22px 22px;background:linear-gradient(150deg,var(--goldL),var(--goldB));color:#3A1C06;box-shadow:0 12px 28px rgba(138,100,8,.18);transition:transform .35s,box-shadow .35s;}
+.qcard:hover{transform:translateY(-6px);box-shadow:0 20px 38px rgba(138,100,8,.26);}
+.qcard .num{position:absolute;top:12px;right:18px;font-family:'Anton';font-size:30px;color:rgba(58,28,6,.32);}
+.qcard .t{font-family:'Oswald';font-weight:700;font-size:16px;text-transform:uppercase;margin-bottom:8px;line-height:1.15;}
+.qcard p{font-size:13px;margin:0;line-height:1.5;}
+.subh{font-family:'Oswald';font-weight:700;font-size:20px;text-transform:uppercase;color:var(--choc);letter-spacing:.02em;margin-top:52px;}
+/* closing band */
+.closing{background:linear-gradient(120deg,var(--choc),var(--choc2));color:#fff;text-align:center;}
+.closing .inner{position:relative;z-index:3;}
+.closing h2{font-family:'Anton';text-transform:uppercase;font-size:clamp(28px,4.5vw,52px);line-height:1.02;}
+.closing h2 .it{font-family:'Playfair Display';font-style:italic;font-weight:500;text-transform:none;color:var(--goldL);}
+.closing p{color:#E7D9C2;max-width:58ch;margin:16px auto 28px;}
+.closing .logo{height:104px;margin:30px auto 0;opacity:.95;}
+.closing .wave{bottom:0;opacity:.35;}
+/* contact */
+.contact{background:var(--ivory);}
+.ccard{border-radius:16px;overflow:hidden;background:linear-gradient(120deg,var(--goldL),var(--goldB));color:#3A1C06;padding:40px 44px;display:grid;grid-template-columns:1.4fr 1fr;gap:30px;margin-top:30px;box-shadow:0 20px 44px rgba(138,100,8,.2);}
+.ccard .l{font-family:'Oswald';font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.75;margin-bottom:8px;}
+.ccard .co{font-family:'Oswald';font-weight:700;font-size:22px;text-transform:uppercase;line-height:1.1;}
+.credits{margin-top:30px;font-size:12px;color:var(--faint);line-height:1.6;font-style:italic;max-width:80ch;}
+/* footer */
+footer{background:var(--choc2);color:#CDBEA6;padding:60px 0 30px;}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:36px;}
+footer h4{color:#fff;font-family:'Oswald';font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;}
+footer a:hover{color:#fff;} .ph{color:var(--goldL);}
+footer p{font-size:13.5px;line-height:1.9;margin:0;}
+.fbot{border-top:1px solid rgba(227,200,120,.18);margin-top:42px;padding-top:20px;font-size:11.5px;color:#9A8870;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+/* reveal animations */
+@media(prefers-reduced-motion:no-preference){
+ .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1);will-change:opacity,transform;}
+ .reveal.in{opacity:1;transform:none;}
+ .wave svg{animation:drift 9s ease-in-out infinite alternate;}
+ @keyframes drift{from{transform:translateX(0)}to{transform:translateX(-18px)}}
+}
+@media(max-width:960px){
+ .links{display:none;} .grid2{grid-template-columns:1fr;gap:34px;}
+ .circles{grid-template-columns:1fr 1fr;} .pgrid{grid-template-columns:repeat(2,1fr);} .svcgrid{grid-template-columns:1fr 1fr;}
+ .twocard{grid-template-columns:1fr;} .qgrid{grid-template-columns:1fr;} .ccard{grid-template-columns:1fr;} .fgrid{grid-template-columns:1fr;}
+ details.svc .body{grid-template-columns:1fr;} .fcard:nth-child(even){margin-left:0;} section{padding:72px 0;}
+}
+</style>
+</head>
+<body>
+<header id="hdr"><div class="wrap nav">
+  <a class="brand" href="#top"><img src="logo.png" alt="New Horizon Container Terminal"></a>
+  <nav class="links">
+    <a href="#company">Company</a><a href="#principals">Leadership</a><a href="#services">Capabilities</a><a href="#edge">Why NHCT</a><a href="#contact" class="cta">Contact</a>
+  </nav>
+</div></header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="bg"><img src="hero.jpg" alt="Chattogram Port at dusk" id="heroimg"></div>
+  <div class="veil"></div>
+  <div class="wrap inner">
+    <img class="logo" src="logo.png" alt="NHCT">
+    <div class="eyebrow on">Chattogram Port &middot; Bangladesh</div>
+    <h1>Terminal operations, run by <span class="it">people</span> who built the <span class="it">industry</span></h1>
+    <p class="sub">A terminal operating company bringing owned equipment, a trained workforce and in-house marine engineering together under one accountable operator.</p>
+    <div class="btns">
+      <a class="btn gold" href="#services">Our capabilities</a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+  <div class="wave" data-w></div>
+  <div class="scroll"></div>
+</section>
+
+<!-- WHO WE ARE -->
+<section id="company">
+  <div class="wrap">
+    <div class="eyebrow reveal">Who we are</div>
+    <h2 class="sh disp reveal">Decades of experience, under <span class="it">one</span> operating company</h2>
+    <div class="grid2">
+      <div class="reveal">
+        <p class="lead" style="margin-bottom:16px;">NHCT is not a new name in Bangladesh&rsquo;s port economy. It is the operating company through which several of the country&rsquo;s most established maritime, engineering, industrial and financial houses have come together to run terminal operations at Chattogram.</p>
+        <p class="muted">Its principals have built shipyards and delivered vessels to a dozen countries, run ocean-going fleets, operated inside Chattogram&rsquo;s container terminals, and managed workforces in the thousands. NHCT brings that depth into a single operating company, with its own equipment, its own people and in-house maintenance.</p>
+      </div>
+      <div class="imgcard reveal"><img src="company.jpg" alt="Chattogram Port"><div class="tag">Chattogram Port &middot; one of South Asia&rsquo;s busiest gateways</div></div>
+    </div>
+    <div class="circles stagger">
+      <div class="circ"><div class="n" data-val="150" data-suf="+">150+</div><div class="k">combined years of leadership</div></div>
+      <div class="circ"><div class="n" data-val="5">5</div><div class="k">enterprise houses</div></div>
+      <div class="circ"><div class="n" data-val="40">40</div><div class="k">owned tractor-trailers</div></div>
+      <div class="circ"><div class="n" data-val="1000" data-pre="~">~1,000</div><div class="k">three-shift workforce</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDATION -->
+<section id="foundation" style="background:var(--cream);">
+  <div class="wrap">
+    <div class="eyebrow reveal">Our foundation</div>
+    <h2 class="sh disp reveal">The enterprises <span class="it">behind</span> NHCT</h2>
+    <p class="muted reveal" style="max-width:70ch;">NHCT does not start from zero. It is built on established houses that have operated in shipbuilding, shipping, stevedoring, port logistics, engineering and finance for decades.</p>
+    <div class="fcards stagger">
+      <div class="fcard"><div class="num">01</div><div><div class="t">Western Marine Shipyard &amp; Services</div><div class="r">Shipbuilding</div><p>150+ vessels built, 32 exported. Heavy engineering, fabrication and ISO / class quality.</p></div></div>
+      <div class="fcard"><div class="num">02</div><div><div class="t">Seacom Group</div><div class="r">Port logistics</div><p>Deep roots in the Chattogram port ecosystem: stevedoring at scale, government and banking.</p></div></div>
+      <div class="fcard"><div class="num">03</div><div><div class="t">Trans Ocean &amp; Hotel Sarina</div><div class="r">Shipping &amp; industry</div><p>Ocean-going fleet, a 15 MW power station and a 5-star hotel: engineering and facilities.</p></div></div>
+      <div class="fcard"><div class="num">04</div><div><div class="t">Sany &amp; S.W. Shipping</div><div class="r">Terminal logistics</div><p>Container movement in direct interface with Chattogram&rsquo;s terminals: first-hand knowledge.</p></div></div>
+      <div class="fcard"><div class="num">05</div><div><div class="t">SFAI International</div><div class="r">Finance</div><p>A top-ranked global accountancy network: financial control and governance.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<section class="divider">
+  <div class="bg"><img src="divider.jpg" alt="Karnaphuli river at dusk"></div>
+  <div class="veil"></div>
+  <div class="wrap inner"><h3 class="reveal">Experience a long time in the <span class="it">making,</span><br>now organised for one purpose</h3></div>
+</section>
+
+<!-- PRINCIPALS -->
+<section class="prin" id="principals">
+  <div class="wrap">
+    <div class="eyebrow reveal">Leadership</div>
+    <h2 class="sh disp reveal">The princi<span class="it">pals</span></h2>
+    <p class="muted reveal" style="max-width:70ch;">Five principals, each a leader in a field central to terminal operations, form the core of NHCT. Between them they cover marine and mechanical engineering, shipbuilding, terminal operations, stevedoring, survey and financial control.</p>
+    <div class="pgrid stagger">
+      <div class="person"><div class="pphoto"><img src="pr_sarwar.jpg" alt="Engr. Golam Sarwar"></div><div class="pinfo"><div class="nm">Engr. Golam Sarwar</div><div class="ro">Chairman</div></div></div>
+      <div class="person"><div class="pphoto"><img src="pr_sakhawat.jpg" alt="Engr. Md. Sakhawat Hossain"></div><div class="pinfo"><div class="nm">Engr. Md. Sakhawat Hossain</div><div class="ro">Managing Director</div></div></div>
+      <div class="person"><div class="pphoto"><img src="pr_malek.jpg" alt="Capt. Mohammed Abdul Malek"></div><div class="pinfo"><div class="nm">Capt. M. Abdul Malek</div><div class="ro">Chief Executive Officer</div></div></div>
+      <div class="person"><div class="pphoto"><img src="pr_hai.jpg" alt="Mr. S. M. Abdul Hai"></div><div class="pinfo"><div class="nm">Mr. S. M. Abdul Hai</div><div class="ro">Commercial Director</div></div></div>
+      <div class="person"><div class="pphoto"><img src="pr_ashfaq.jpg" alt="Mr. Ashfaq Zaman, CPA"></div><div class="pinfo"><div class="nm">Mr. Ashfaq Zaman, CPA</div><div class="ro">Finance Director</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES / SERVICES -->
+<section class="services" id="services">
+  <div class="bg"><img src="services.jpg" alt="Terminal operations"><div class="v"></div></div>
+  <div class="wrap inner">
+    <div class="eyebrow on reveal">What we do</div>
+    <h2 class="sh disp light reveal">The whole internal operation, run by <span class="it">one</span> company</h2>
+    <p class="reveal" style="color:#E7D9C2;max-width:70ch;">NHCT runs the internal operating layer of a container terminal, end to end, under the operator&rsquo;s management and systems. Ten capabilities, each set out below: what it is, and the strength NHCT brings to it.</p>
+    <div class="svcgrid stagger" id="svccards"></div>
+    <div class="sdetail reveal" id="svcdetail" style="background:var(--ivory);color:var(--ink);border-radius:14px;padding:16px 28px;margin-top:34px;"></div>
+  </div>
+</section>
+
+<!-- SCOPE OF OPERATIONS -->
+<section id="scope">
+  <div class="wrap">
+    <div class="eyebrow reveal">Scope of operations</div>
+    <h2 class="sh disp reveal">The full operating cycle, <span class="it">under</span> one roof</h2>
+    <p class="muted reveal" style="max-width:78ch;">From the quay to the gate, NHCT can run the internal operating cycle of a modern container terminal, organised to fit the operator&rsquo;s own structure and grouped for efficiency and clear accountability.</p>
+    <div class="twocard">
+      <div class="bigcard choc reveal"><div class="ce">Handling &amp; movement</div><div class="ct">The physical operation</div>
+        <ul><li>Stuffing &amp; unstuffing (FCL / LCL)</li><li>Horizontal transport across quay, yard and gate</li><li>Empty (MT) container handling</li><li>Yard operations &amp; stacking</li><li>Transfers to ICD &amp; stackyard</li></ul></div>
+      <div class="bigcard gold reveal"><div class="ce">Control &amp; specialist services</div><div class="ct">The layer around it</div>
+        <ul><li>Survey &amp; damage inspection</li><li>Documentation &amp; tally on the TOS</li><li>Reefer container management</li><li>Safety, security &amp; compliance</li><li>Workforce &amp; support services</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE DELIVER -->
+<section id="deliver" style="background:var(--cream);">
+  <div class="wrap">
+    <div class="eyebrow reveal">How we deliver it</div>
+    <h2 class="sh disp reveal">Owned equipment, <span class="it">trained</span> people, systems</h2>
+    <p class="muted reveal" style="max-width:76ch;">NHCT mobilises a complete operating capability: its own equipment, its own three-shift workforce, and the systems to run under the operator&rsquo;s TOS, from day one.</p>
+    <div class="grid2" style="align-items:start;gap:34px;">
+      <div class="tblwrap reveal" style="margin-top:14px;">
+        <table class="t"><thead><tr><td>Equipment / resource</td><td style="text-align:center;">Nos</td><td>Role</td></tr></thead><tbody>
+        <tr><td class="k">Tractor-trailers</td><td class="c">40</td><td>Container transfers and internal moves</td></tr>
+        <tr><td class="k">Reach stackers (RST)</td><td class="c">fleet</td><td>Empties and container handling</td></tr>
+        <tr><td class="k">Forklifts (incl. 3T &amp; 5T)</td><td class="c">fleet</td><td>Unstuffing, cargo handling</td></tr>
+        <tr><td class="k">Sidelifters</td><td class="c">fleet</td><td>Empty-container handling</td></tr>
+        <tr><td class="k">Spreaders, slings, lashing</td><td class="c">sets</td><td>Crane and lashing support</td></tr>
+        <tr><td class="k">Handheld terminals (HHT)</td><td class="c">~30</td><td>TOS-linked yard / gate</td></tr>
+        <tr><td class="k">Tally tablets (TOS)</td><td class="c">~18</td><td>Tally at vessel, yard, CFS</td></tr>
+        <tr><td class="k">Maintenance workshop</td><td class="c">1</td><td>Repair, maintenance, renewal</td></tr>
+        </tbody></table>
+      </div>
+      <div style="margin-top:14px;">
+        <div class="bigcard gold reveal" style="padding:24px 26px;"><div class="ct" style="margin-bottom:12px;">Workforce &amp; organisation</div>
+          <ul style="list-style:none;"><li style="position:relative;padding-left:22px;margin-bottom:9px;font-size:14px;"><span style="position:absolute;left:0;color:var(--choc);">&#9670;</span>Equipment operators (RST, forklift, crane where required)</li>
+          <li style="position:relative;padding-left:22px;margin-bottom:9px;font-size:14px;"><span style="position:absolute;left:0;color:var(--choc);">&#9670;</span>Dedicated tractor-trailer driving cadre, three shifts with reserve</li>
+          <li style="position:relative;padding-left:22px;margin-bottom:9px;font-size:14px;"><span style="position:absolute;left:0;color:var(--choc);">&#9670;</span>Skilled labour and lashing gangs; merchant labour for FCL / LCL</li>
+          <li style="position:relative;padding-left:22px;margin-bottom:9px;font-size:14px;"><span style="position:absolute;left:0;color:var(--choc);">&#9670;</span>Tally, IT and accounts-control teams on the TOS</li>
+          <li style="position:relative;padding-left:22px;font-size:14px;"><span style="position:absolute;left:0;color:var(--choc);">&#9670;</span>Specialist in-house maintenance team, three shifts</li></ul></div>
+        <div class="bigcard choc reveal" style="padding:22px 26px;margin-top:16px;"><div class="ct" style="margin-bottom:10px;">Software &amp; documentation</div><p style="font-size:14px;margin:0;opacity:.95;">NHCT operates under the terminal and warehouse-management systems in place, with TOS-compatible handheld terminals and tally devices, and provides the documentation that connects cleanly into the master terminal flow.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY NHCT / EDGE -->
+<section id="edge">
+  <div class="wrap">
+    <div class="eyebrow reveal">Why NHCT</div>
+    <h2 class="sh disp reveal">Strength you can build an <span class="it">operation</span> on</h2>
+    <p class="muted reveal" style="max-width:76ch;">NHCT operates to the standards a world-class terminal expects, and commits to measurable service levels from the first shift.</p>
+    <div class="qgrid stagger">
+      <div class="qcard"><div class="num">01</div><div class="t">Operational depth</div><p>Container movement operated directly across Chattogram&rsquo;s terminals, led by a master mariner.</p></div>
+      <div class="qcard"><div class="num">02</div><div class="t">Owned equipment</div><p>A fleet of trailers, reach stackers, forklifts and sidelifters, backed by its own workshop.</p></div>
+      <div class="qcard"><div class="num">03</div><div class="t">Workforce at scale</div><p>A complete three-shift workforce on the order of a thousand, with reserve.</p></div>
+      <div class="qcard"><div class="num">04</div><div class="t">In-house maintenance</div><p>A technical team by equipment class, backed by a shipbuilding and heavy-engineering heritage.</p></div>
+      <div class="qcard"><div class="num">05</div><div class="t">Local standing</div><p>Deep labour, union, security and institutional relationships that keep operations steady.</p></div>
+      <div class="qcard"><div class="num">06</div><div class="t">Governance</div><p>CPA-led financial control, transparent billing, and statutory and insurance compliance to standard.</p></div>
+    </div>
+    <div class="subh reveal">Service levels we commit to</div>
+    <div class="tblwrap reveal">
+      <table class="t"><thead><tr><td>Measure</td><td>How it is managed</td></tr></thead><tbody>
+      <tr><td class="k">Yard &amp; transport productivity</td><td>Moves per hour per unit, against the berth and yard plan.</td></tr>
+      <tr><td class="k">Truck / trailer turnaround</td><td>Average turnaround time per cycle; queue control at hook and gate.</td></tr>
+      <tr><td class="k">Equipment availability</td><td>Fleet availability percentage, backed by the in-house maintenance team.</td></tr>
+      <tr><td class="k">Workforce reliability</td><td>Full manning per shift with reserve; no-disruption ground operations.</td></tr>
+      <tr><td class="k">Safety &amp; compliance</td><td>Zero-harm target; SOP and TOS compliance to international standard.</td></tr>
+      <tr><td class="k">Reporting</td><td>Shift, daily and monthly reporting into the master terminal flow.</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING BAND -->
+<section class="closing">
+  <div class="wrap inner">
+    <div class="eyebrow on reveal">New Horizon Container Terminal</div>
+    <h2 class="reveal">Operations, owned <span class="it">end to end</span></h2>
+    <p class="reveal">Owned equipment, trained people and in-house engineering, run locally and accountable under one operator.</p>
+    <a class="btn gold reveal" href="#contact">Get in touch</a>
+    <img class="logo reveal" src="logo.png" alt="NHCT">
+  </div>
+  <div class="wave" data-w></div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow reveal">Contact</div>
+    <h2 class="sh disp reveal">Get in <span class="it">touch</span></h2>
+    <div class="ccard reveal">
+      <div><div class="l">Company</div><div class="co">New Horizon Container Terminal Ltd</div><div style="margin-top:8px;font-weight:600;">Chattogram &amp; Dhaka, Bangladesh</div></div>
+      <div><div class="l">Online</div><div style="font-weight:600;"><a href="https://nhctbd.com" style="color:inherit;">nhctbd.com</a></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><img src="logo.png" alt="NHCT" style="height:88px;margin-bottom:16px;"><p style="max-width:34ch;color:#CDBEA6;">New Horizon Container Terminal Ltd. A terminal operating company at Chattogram Port, Bangladesh.</p></div>
+      <div><h4>Contact</h4><p>Chattogram &amp; Dhaka, Bangladesh<br><a href="https://nhctbd.com" class="ph">nhctbd.com</a></p></div>
+      <div><h4>Explore</h4><p><a href="#company">Company</a><br><a href="#principals">Leadership</a><br><a href="#services">Capabilities</a><br><a href="#edge">Why NHCT</a></p></div>
+    </div>
+    <div class="fbot"><div>&copy; 2026 New Horizon Container Terminal Ltd.</div><div>Chattogram Port, Bangladesh</div></div>
+  </div>
+</footer>
+
+<script>
+// header scroll
+var h=document.getElementById('hdr');function hs(){h.classList.toggle('solid',scrollY>60);}addEventListener('scroll',hs);hs();
+var RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+// gold wave motif
+function waveSVG(el){
+  var W=1200,H=120,N=16,s='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" fill="none">';
+  for(var i=0;i<N;i++){
+    var amp=14+i*1.6, ph=i*0.5, cy=H*0.5+(i-N/2)*1.2, op=0.25+0.5*(1-Math.abs(i-N/2)/(N/2));
+    var d='M0,'+(cy);
+    for(var x=0;x<=W;x+=20){ var y=cy+amp*Math.sin((x/W)*6.283*1.4+ph); d+=' L'+x+','+y.toFixed(1); }
+    s+='<path d="'+d+'" stroke="#D9B45A" stroke-width="1" opacity="'+op.toFixed(2)+'"/>';
+  }
+  s+='</svg>'; el.innerHTML=s;
+}
+document.querySelectorAll('[data-w]').forEach(waveSVG);
+
+// hero ken-burns (slow settle)
+(function(){var img=document.getElementById('heroimg');if(img&&!RM){requestAnimationFrame(function(){img.style.transition='transform 18s ease-out';img.style.transform='scale(1)';});}else if(img){img.style.transform='none';}})();
+
+// services data
+var SV=[
+ ['01','Manpower & workforce management','users',
+  'Recruitment, training, rostering, supervision and welfare of the complete operating workforce, operators, labour, lashing gangs, tally clerks and supervisors, organised across three shifts and sized with a reserve pool so every shift is fully manned.',
+  'Manpower at Chattogram is not a staffing problem, it is a stability problem. NHCT’s principals have manned stevedoring and industrial operations in the thousands here for decades, and carry the labour, union and institutional relationships that keep a workforce stable.',
+  ['Three-shift workforce of around a thousand, with reserve','Deep labour, union and community relations at Chattogram','Trained to the operator’s standards and TOS'],
+  'S. M. Abdul Hai: stevedoring labour at scale · Capt. Malek: terminal workforce supervision · Engr. Sakhawat: industrial workforce leadership'],
+ ['02','Stuffing & unstuffing (CFS)','box',
+  'The full CFS cycle: positioning the box, survey, discharging or loading with merchant labour and forklifts (including 3T and 5T units for LCL), sorting, weighing, tallying, and preparing cargo for delivery or the export stack.',
+  'CFS throughput is won by trained gangs, the right forklifts and tight supervision. NHCT owns the handling equipment and fields experienced gangs from a stevedoring and CFS heritage built at Chattogram, with survey competence in-house.',
+  ['Owned forklift fleet, including 3T and 5T for LCL','Experienced merchant-labour and CFS gangs','In-house survey to control damage claims'],
+  'S. M. Abdul Hai: stevedoring and CFS · Capt. Malek: terminal interface and survey · Engr. Sakhawat: materials-handling engineering'],
+ ['03','Container transfers & horizontal transport','truck',
+  'The horizontal transport linking quay, yards and gate: discharge from the hook to the yard, empty (MT) transfers, transfers to the ICD and stackyards, repositioning between stations, and haulage to delivery, with NHCT’s own tractor-trailers.',
+  'Horizontal transport lives or dies on fleet availability. NHCT provides 40 owned tractor-trailers kept running by its own workshop, led by a team that ran container movement in direct interface with Chattogram’s terminals.',
+  ['40 owned tractor-trailers, maintained in-house','Three-shift driving cadre with reserve','Proven container-movement operation at Chattogram'],
+  'Capt. Malek: container-movement company · Engr. Sakhawat & Sarwar: fleet engineering · S. M. Abdul Hai: port logistics'],
+ ['04','Equipment, maintenance & engineering','wrench',
+  'Providing the owned operating fleet and keeping it available through a structured in-house maintenance organisation: preventive maintenance, breakdown response, overhaul, spares management and renewal.',
+  'Behind the operation stands a shipbuilding and heavy-engineering group that builds and repairs ocean-going ships. NHCT can fabricate, repair and overhaul heavy equipment in-country, to ISO and classification-society standards.',
+  ['In-house workshop and technicians by equipment class','Shipbuilding-grade fabrication and repair','ISO and class-standard quality systems'],
+  'Engr. Sakhawat: shipyard, marine machinery, NDT · Engr. Sarwar: heavy plant installation · Capt. Malek: availability targets'],
+ ['05','Yard & equipment operations','layers',
+  'Operating the container yards: stacking, de-stacking, positioning and shifting with reach stackers and forklifts across the working, overflow, auction and delivery yards, to the operator’s plan and TOS.',
+  'Yard productivity is a function of equipment availability and operator skill. NHCT brings owned reach stackers and forklifts, trained operators across three shifts, and the maintenance depth to keep them running.',
+  ['Owned reach stackers and forklifts','Trained operators, three shifts, with reserve','Maintenance depth for sustained availability'],
+  'Capt. Malek: yard and terminal operations · Engr. Sakhawat & Sarwar: equipment availability and training'],
+ ['06','Survey & damage inspection','search',
+  'Independent survey and damage inspection of containers and cargo at the key custody points, with photographic records, condition reports and exception reporting to the operator, the line and the merchant.',
+  'Survey is credibility. NHCT’s terminal lead is a Master Mariner and P&I Club marine surveyor, and the group holds standing with Lloyd’s Register, DNV-GL and Bureau Veritas.',
+  ['Master Mariner and P&I surveyor in-house','Standing with the major classification societies','Photographic condition records at each custody point'],
+  'Capt. Malek: P&I surveyor and H&M consultant · Engr. Sakhawat: classification-society standing'],
+ ['07','Documentation, tally & TOS integration','doc',
+  'Real-time tally at the vessel, yard and CFS on TOS-compatible handheld terminals; EIRs, tally sheets and movement records; and the documentation that connects into the operator’s master terminal flow, through to clean billing.',
+  'Documentation is where an operation stays auditable and gets paid correctly. NHCT pairs operational tally with genuine CPA-led financial control, transparent billing, reconciliation and reporting an operator can audit and trust.',
+  ['TOS-compatible handheld terminals and tally tablets','CPA-led billing, reconciliation and reporting','Clean segregation of dues to each party'],
+  'Ashfaq Zaman, CPA: financial control and billing · Capt. Malek: operational tally · S. M. Abdul Hai: logistics administration'],
+ ['08','Reefer container management','snow',
+  'A full reefer management plan: receiving and positioning reefer boxes, plugging in, continuously monitoring temperatures, responding to alarms, pre-trip checks, unplugging and reporting, and the security of temperature-controlled cargo.',
+  'Reefer work is an electrical and refrigeration discipline first. NHCT’s marine-engineering depth means monitoring and fault diagnosis are handled by people who understand refrigeration and power systems.',
+  ['Continuous monitoring and alarm response','Marine refrigeration and electrical engineering in-house','Full temperature records and reporting'],
+  'Engr. Sarwar & Sakhawat: marine refrigeration and electrical · Capt. Malek: reefer operations and reporting'],
+ ['09','Safety, security & compliance','shield',
+  'Zero-harm operating procedures and toolbox discipline, PPE and equipment safety, site and cargo security, and full statutory, insurance and regulatory compliance, maintained to the operator’s standard and reported transparently.',
+  'An international operator’s licence and reputation ride on the conduct of its local partner. NHCT brings a marine safety culture, classification-society quality systems and a CPA-led compliance discipline.',
+  ['Zero-harm SOPs and marine safety culture','Full statutory, insurance and tax compliance','Local standing for genuine site security'],
+  'Engr. Sakhawat: ISO and class · Capt. Malek: marine safety and P&I · Ashfaq Zaman: compliance · S. M. Abdul Hai: site security'],
+ ['10','Support services: catering, housekeeping, fuel','cup',
+  'Workforce catering and canteen management, housekeeping of offices and the site, fuel supply to the equipment fleet, and the supply of lubricants and consumables, all on fixed, transparent commercial terms.',
+  'These are the services operators most often find run loose and over-billed. NHCT runs them as professional services: a principal who operates a 5-star hotel brings real catering and housekeeping discipline.',
+  ['Fixed-rate catering and housekeeping, not open-ended','Fuel at an agreed index plus margin','Hotel-grade service discipline'],
+  'Engr. Sarwar: hospitality and facilities (Hotel Sarina) · S. M. Abdul Hai: industrial supply chain'],
+];
+var ICON={
+ users:'<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M3 20c0-3.3 2.7-5 6-5s6 1.7 6 5M15 20c0-2.2 1-3.6 3-4"/>',
+ box:'<rect x="3" y="7" width="18" height="12" rx="1"/><path d="M3 11h18M9 7v12M15 7v12"/>',
+ truck:'<path d="M2 16V8h11v8M13 11h4l3 3v2h-7"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>',
+ wrench:'<path d="M14 7a3 3 0 0 0-4 4l-6 6 2 2 6-6a3 3 0 0 0 4-4l-2 2-2-2z"/>',
+ layers:'<rect x="3" y="14" width="6" height="6"/><rect x="9" y="14" width="6" height="6"/><rect x="6" y="8" width="6" height="6"/><path d="M18 20V7l3 2"/>',
+ search:'<circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/>',
+ doc:'<rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M9 8h6M9 12h6M9 16h4"/>',
+ snow:'<path d="M12 3v18M4.5 7l15 10M19.5 7l-15 10"/>',
+ shield:'<path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/>',
+ cup:'<path d="M5 10h8v9H5zM13 12h3l3 2v5h-6"/><path d="M7 10V7a2 2 0 0 1 4 0v3"/>'
+};
+var cards='',det='';
+SV.forEach(function(s){
+  cards+='<div class="sc"><div class="num">'+s[0]+'</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3A1C06" stroke-width="1.7">'+ICON[s[2]]+'</svg></div><div class="t">'+s[1]+'</div></div>';
+  det+='<details class="svc"><summary><span class="sn">'+s[0]+'</span><span class="st">'+s[1]+'</span><span class="plus">+</span></summary><div class="body"><div><div class="lab">What it is</div><div class="tx">'+s[3]+'</div></div><div><div class="lab">The strength NHCT brings</div><div class="tx">'+s[4]+'</div></div><div class="full"><ul class="dbul">'+s[5].map(function(b){return '<li>'+b+'</li>';}).join('')+'</ul></div><div class="full"><div class="lab">Expertise behind it</div><div class="exp">'+s[6]+'</div></div></div></details>';
+});
+document.getElementById('svccards').innerHTML=cards;
+document.getElementById('svcdetail').innerHTML='<div class="eyebrow" style="padding-top:14px;">Ten capabilities in detail</div>'+det;
+
+// stagger setup
+document.querySelectorAll('.stagger').forEach(function(c){
+  Array.prototype.forEach.call(c.children,function(ch,i){ch.classList.add('reveal');ch.style.transitionDelay=(i*70)+'ms';});
+});
+
+// count-up
+function countUp(el){
+  var target=+el.dataset.val, pre=el.dataset.pre||'', suf=el.dataset.suf||'', dur=1300, t0=0;
+  function tick(t){ if(!t0)t0=t; var p=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-p,3), v=Math.round(target*e);
+    el.textContent=pre+v.toLocaleString()+suf; if(p<1)requestAnimationFrame(tick); }
+  requestAnimationFrame(tick);
+}
+
+// reveal + count observers
+if(RM){
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+}else{
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+}
+var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){if(!RM)countUp(e.target);cio.unobserve(e.target);}});},{threshold:.5});
+document.querySelectorAll('.circ .n[data-val]').forEach(function(el){cio.observe(el);});
+
+// ===== principal profiles (detail on click) =====
+var PRIN=[
+ {img:'pr_sarwar.jpg',name:'Engr. Golam Sarwar',desig:'Chairman',role:'Marine Chief Engineer · Seasoned Entrepreneur',
+  pos:['Founder, Trans Ocean Shipping Lines Ltd.','Owner, Hotel Sarina (Dhaka)'],
+  bio:['A Marine Chief Engineer of the highest international certification, with a career spanning ocean-going operations, ship-engineering management, industrial infrastructure and entrepreneurship across Singapore, Iran and Bangladesh. He served as Chief Engineer with Kapal Management (Singapore), Iran Shipping Lines and Neptune Orient Lines.',
+       'From 1991 he owned and ran Trans Ocean Shipping Lines, operating three large Lloyd’s Register-classified vessels from Shenton Way, Singapore. In Bangladesh he installed a complete 15 MW Alstom gas turbine power station in Chattogram, and owns Hotel Sarina, a 5-star, 21-storey steel-structure hotel designed and built by his own engineering company.'],
+  hl:['Owner and operator of 3 large ocean-going vessels, Lloyd’s Register (UK) classified','Complete installation of a 15 MW Alstom gas turbine power station (UK-built) in Chattogram','Over 35 years of continuous engineering and industrial leadership across multiple sectors'],
+  stats:[['35+','years of engineering & industrial leadership'],['3','ocean-going vessels owned'],['15 MW','gas turbine power station'],['21','storeys, 5-star Hotel Sarina']],
+  cred:'First Class Marine Engineering (Chief Engineer), London (1985) · Bangladesh Marine Academy (1975)'},
+ {img:'pr_sakhawat.jpg',name:'Engr. Md. Sakhawat Hossain',desig:'Managing Director',role:'Shipbuilder · Marine Engineer (MEO Class-1, U.K.)',
+  pos:['President, BMAAA','Chairman, Western Marine Services Ltd.','Chairman, S.S. Trading & TS Dredging','Founder, WMShL'],
+  bio:['One of Bangladesh’s most decorated maritime figures and the pioneer of its modern ship-export industry. As Founding Managing Director of Western Marine Shipyard since 2002, he led the construction of 150+ vessels, 32 of them exported to 12 countries and earning over USD 150 million.',
+       'As Chairman of Western Marine Services he oversees ship repair, marine spares, steel construction, NDT and dry-dock consultancy at both principal seaports (ISO 9001 and GL certified). Through S.S. Trading he has delivered jetty, dredging, dyke and steelwork for the Chittagong Port Authority: proven port-side engineering execution inside the port itself.'],
+  hl:['Executive Committees of Lloyd’s Register South Asia, DNV-GL South Asia and Bureau Veritas Asia & Australia; Council Member, IMarEST UK','President’s Award for Shipbuilding; National Export Trophy (Gold); CIP, Bangladesh; World Maritime Day Award (2007); HSBC Export Excellence Award (2018)','Founder Chairperson, IBFB Chattogram Chapter; President, BMAAA 2026-2027'],
+  stats:[['46+','years of experience'],['150+','vessels built'],['32','export vessels, 12 countries'],['USD 150M+','ship-export earnings']],
+  cred:'MEO Class-1 Certificate, U.K. (1989) · Bangladesh Marine Academy, Batch 16E · Rajshahi Cadet College'},
+ {img:'pr_hai.jpg',name:'S. M. Abdul Hai',desig:'Commercial Director',role:'Industrialist · Director, Seacom Group',
+  pos:['Director, Seacom Group','Former KDS Group (1986-1997)','Highest Export Trophy, Government of Bangladesh'],
+  bio:['An accomplished industrialist with some four decades across export manufacturing, garments, shipping, logistics and infrastructure. As Director of Seacom Group, a conglomerate that began in shipping and grew into cement, LPG, edible oil, agro-processing, shipping agency, stevedoring and port logistics, shipbuilding, capital markets and hospitality, he provides strategic oversight and leads engagement with government, financial institutions and partners.',
+       'At KDS Group (1986-1997) he brought Walmart, Target, Kmart, JCPenney and other major retailers into direct engagement with Bangladeshi factories. His own export businesses later won the Highest Export Trophy, presented by the then Prime Minister.'],
+  hl:['Highest Export Trophy, Government of Bangladesh; CIP recognitions for export performance (2000, 2001 and 2014-2015)','Recognised by the Honourable Prime Minister at the 12th BATEXPO; Swadhinata Sangsad award for business contribution (2017)','Continues the family philanthropic legacy of his late father, Al Haj M. A. Hadi: schools, colleges and Independent University, Bangladesh'],
+  stats:[['~40','years in industry, export & shipping'],['14','named Seacom sister concerns'],['600','garment machines at KDS (1986)'],['1986-97','KDS Group, Export Trophies']],
+  cred:'Bachelor of Commerce, Government Commerce College, Chattogram'},
+ {img:'pr_malek.jpg',name:'Capt. Mohammed Abdul Malek',desig:'Chief Executive Officer',role:'Master Mariner (Class-1, DTP, U.K.) · Member, Chartered Institute of Shipbrokers',
+  pos:['Former Executive Director, Sany Shipping Pte Ltd. (Singapore)','Former MD, S.W. Shipping & Logistics Services Ltd.'],
+  bio:['A Master Mariner (Class-1 Deck, UK, 1991) with 15 years of foreign-going sea service, five of them as Master, followed by 29 years of shore-based leadership: Executive Director and Port Captain of Sany Shipping (Singapore) in Yangon, then MD of Sany Marine Services in Chattogram, where he co-owned MV Martina and MV Bay Fortune.',
+       'From 2009 to 2015 he was MD of S.W. Shipping & Logistics Services, a container-movement company with a direct interface to Chattogram’s port container terminals, off-docks and operators, giving him direct, current insight into the terminal operating environment. He is also a P&I Club marine surveyor and consultant.'],
+  hl:['MD, S.W. Shipping & Logistics Services Ltd. (2009-2015): direct container-terminal interface in Chattogram','P&I Club marine surveyor and consultant for H&M underwriters, owners and charterers, across vessel and cargo','Bangladesh Marine Academy: President’s Gold Medal, best all-round cadet'],
+  stats:[['40+','years in maritime, shipping & logistics'],['15','years foreign-going sea service'],['5','years as Master of ocean-going vessels'],['2009-15','MD, container movement at Chattogram']],
+  cred:'Master Mariner Class-1, DTP U.K. (1991) · Chartered Institute of Shipbrokers · Faujdarhat Cadet College (2nd, SSC & HSC merit list)'},
+ {img:'pr_ashfaq.jpg',name:'Ashfaq Zaman, CPA',desig:'Finance Director',role:'Chartered Accountant · Director, Asia Pacific, SFAI International',
+  pos:['Advisor, Ministry of Foreign Affairs Bangladesh','Founder, Dhaka Forum','Vice Chairman, CNI News'],
+  bio:['A Chartered Accountant (CPA) and Director for Asia Pacific at SFAI International, the world’s 11th-ranked accountancy network. A Cambridge alumnus with a Six Sigma credential from Oxford and a Stanford Seed graduate, he brings a rare synthesis of global financial acumen, strategic advisory experience and institutional connectivity.',
+       'He advises the iLab project at Bangladesh’s Ministry of Foreign Affairs, has collaborated with UNDP, Google, Meta, the Rockefeller Foundation, the Gates Foundation and the World Economic Forum, and comments for the BBC, Reuters, The Times, Foreign Policy and EuroNews. Curator of TEDxGulshan, founder of Dhaka Forum, and Trustee Chair of Charity Right.'],
+  hl:['Director, Asia Pacific, SFAI International (310+ offices)','Strategic advisor to UNDP, the World Economic Forum, the Rockefeller Foundation, the Gates Foundation, Google and Meta','Involved in the formation of the British Queen’s Young Leaders Programme under the Commonwealth Trust'],
+  stats:[['11th','ranked global accountancy network (SFAI)'],['310+','SFAI offices worldwide'],['Cambridge','University alumnus'],['Stanford','Seed graduate']],
+  cred:'Chartered Accountant (CPA) · University of Cambridge, Alumnus · Oxford Six Sigma · Stanford Seed'}
+];
+var pm=document.createElement('div');pm.className='pmodal';pm.setAttribute('role','dialog');pm.setAttribute('aria-modal','true');
+pm.innerHTML='<div class="backdrop"></div><div class="panel"><button class="pclose" aria-label="Close profile">&times;</button>'+
+ '<div class="phead"><div class="ppic"><img alt=""></div><div><div class="pnm"></div><div class="pro"></div><div class="psub"></div><ul class="ppos"></ul></div></div>'+
+ '<div class="pbody"></div></div>';
+document.body.appendChild(pm);
+var pPanel=pm.querySelector('.panel'), pImg=pm.querySelector('.phead img'), pNm=pm.querySelector('.pnm'), pRo=pm.querySelector('.pro'), pSub=pm.querySelector('.psub'), pPos=pm.querySelector('.ppos'), pBody=pm.querySelector('.pbody'), lastFocus=null;
+function esc(x){return String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function openP(i){
+  var d=PRIN[i]; if(!d)return;
+  pImg.src=d.img; pImg.alt=d.name; pNm.textContent=d.name; pRo.textContent=d.desig; pSub.textContent=d.role;
+  pPos.innerHTML=d.pos.map(function(x){return '<li>'+esc(x)+'</li>';}).join('');
+  var h=d.bio.map(function(x){return '<p>'+esc(x)+'</p>';}).join('');
+  h+='<div class="plab">Career highlights</div><ul class="phl">'+d.hl.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>';
+  h+='<div class="plab">At a glance</div><div class="pstatg">'+d.stats.map(function(s){return '<div class="s"><div class="v">'+esc(s[0])+'</div><div class="k">'+esc(s[1])+'</div></div>';}).join('')+'</div>';
+  h+='<div class="pcred"><b>Credentials</b>'+esc(d.cred)+'</div>';
+  pBody.innerHTML=h; pPanel.scrollTop=0;
+  lastFocus=document.activeElement; pm.classList.add('open'); document.body.style.overflow='hidden'; pm.querySelector('.pclose').focus();
+}
+function closeP(){ pm.classList.remove('open'); document.body.style.overflow=''; if(lastFocus)lastFocus.focus(); }
+pm.querySelector('.pclose').addEventListener('click',closeP);
+pm.querySelector('.backdrop').addEventListener('click',closeP);
+addEventListener('keydown',function(e){if(e.key==='Escape'&&pm.classList.contains('open'))closeP();});
+document.querySelectorAll('.prin .person').forEach(function(el){
+  var src=el.querySelector('img').getAttribute('src');
+  var idx=PRIN.findIndex(function(d){return d.img===src;});
+  if(idx<0)return;
+  el.setAttribute('role','button'); el.tabIndex=0; el.setAttribute('aria-label','View profile: '+PRIN[idx].name);
+  var m=document.createElement('div'); m.className='pmore'; m.textContent='View profile →'; (el.querySelector('.pinfo')||el).appendChild(m);
+  el.addEventListener('click',function(){openP(idx);});
+  el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openP(idx);}});
+});
+</script>
+</body>
+</html>
